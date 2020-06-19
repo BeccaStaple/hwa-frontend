@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="./Fontend/css/index.css">
+    </head>
+    <body>
+        <h1>STAMP COLLECTION</h1>
+        
+        <div>
+            <button id="stampPg">STAMP</button>
+            <button id="collectionPg">COLLECTION</button>
+        </div>
+        
+        <div class="container-grid">
+                <div id="createStamp" class="card text-white bg-warning mb-3" style="max-width: 20rem;" >
+                    <h2 class="card-header">Create A Stamp</h2>
+                        <div class="card-body">
+                            <form id="createStampForm">
+                                <label for="stampName" class="card-text">Stamp Name</label>
+                                <br/>
+                                <input type="text" placeholder="Stamp Name" id="stampName"/>
+                                <br/>
+
+                                <label for="stampValue" class="card-text">Value</label>
+                                <br/>
+                                <input type="number" placeholder="Value" id="stampValue"/>
+                                <br/>
+
+                                <label for="yearMade" class="card-text">Year Made</label>
+                                <br/>
+                                <input type="number" placeholder="Year Made" id="yearMade"/>
+                                <br/>
+
+                                <label for="fkCollectionId" class="card-text">Collection ID Number</label>
+                                <br/>
+                                <input type="number" placeholder="Collection ID" id="fkCollectionId"/>
+                                <br/>
+
+                                <br/>
+                                <button>SUBMIT</button>
+                            
+                            </form>
+                    </div>
+            </div>
+
+            <div id="readStamp"  class="card text-white bg-success mb-3" style="max-width: 20rem;" >
+                <h2 class="card-header">View Stamps</h2>
+                    <div class="card-body">
+                        <button id="readAll">VIEW ALL</button>
+                    </div>
+            </div>
+
+            <div id="updateStamp" class="card text-white bg-info mb-3" style="max-width: 20rem;" >
+                <h2 class="card-header">Update A Stamp</h2>
+
+                <div class="card-body">
+                    <label for="stampIdUpdate" class="card-text">Stamp ID</label>
+                    <br/>
+                    <input type="number" id="stampIdUpdate"/>
+                    <br/>
+
+                    <label for="stampToUpdate" class="card-text">Entity to Update</label>
+                    <br/>
+                    <input type="text" id="stampToUpdate"/>
+                    <br/>
+
+                    <label for="entityToUpdate" class="card-text">Insert Update</label>
+                    <br/>
+                    <input type="text" id="entityToUpdate"/>
+                    <br/>
+
+                    <button id="updateStampBtn">UPDATE</button>
+                </div>
+            </div>
+
+            <div id="deleteStamp"  class="card text-white bg-danger mb-3" style="max-width: 20rem;" >
+                <h2 class="card-header">Delete a Stamp</h2>
+                    <div class="card-body">
+                        <label for="stampIdDelete" class="card-text">Stamp ID</label>
+                        <br/>
+                        <input type="number" id="stampIdDelete"/>
+                        <br/>
+
+                        <button id="deleteStampBtn">DELETE</button>
+                    </div>
+            </div>
+
+        </div>
+    </body>
+    <script src="./Fontend/js/index.js"></script>
+</html>
+
