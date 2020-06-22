@@ -43,17 +43,21 @@ body {
 }
 
 .stamp-img {
-    margin: 10px;
+    margin: 50px 0 10px 0;
     text-align: center;
 }
 
 .btn {
     position: absolute;
-    bottom: 8px;
+    bottom: 5px;
 }
 
 .btn-block {
     width: 80%;
     margin: 1% 5%;
+}
+
+.spacing-intput {
+    margin: 1px 0 10px 0;
 }
 
