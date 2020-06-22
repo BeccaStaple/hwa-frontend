@@ -42,3 +42,18 @@ body {
     
 }
 
+.stamp-img {
+    margin: 10px;
+    text-align: center;
+}
+
+.btn {
+    position: absolute;
+    bottom: 8px;
+}
+
+.btn-block {
+    width: 80%;
+    margin: 1% 5%;
+}
+
