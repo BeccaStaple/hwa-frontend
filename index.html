@@ -4,16 +4,95 @@
         <link rel="stylesheet" href="./Fontend/css/index.css">
     </head>
     <body>
-        <h1>STAMP COLLECTION</h1>
-        
-        <div>
-            <button id="stampPg">STAMP</button>
-            <button id="collectionPg">COLLECTION</button>
+        <div class="top-heading">
+            <h1 id="top-heading">STAMP COLLECTION</h1>
         </div>
         
+        
+        <div class="collection-section">
+        <div class="collection-head">
+            <h2 id="collection-head">COLLECTIONS</h2>
+        </div>
+        
+
+        <div class="container-grid">
+                    <div id="createCollection" class="card text-white bg-warning mb-3" style="max-width: 20rem;" >
+                        <h3 class="card-header">Create a Collection</h3>
+                            <div class="card-body">
+                                <form id="createCollectionForm">
+                                    <label for="collectionName" class="card-text">Collection Name</label>
+                                    <br/>
+                                    <input type="text" placeholder="Collection Name" id="collectionName"/>
+                                    <br/>
+
+                                    <label for="collectionValue" class="card-text">Value</label>
+                                    <br/>
+                                    <input type="number" placeholder="Value" id="collectionValue"/>
+                                    <br/>
+
+                                    
+
+                                    <label for="themeName" class="card-text">Collection Theme</label>
+                                    <br/>
+                                    <input type="text" placeholder="Theme" id="themeName"/>
+                                    <br/>
+
+                                    <br/>
+                                    <button id="submitNewCollection" class="btn btn-secondary bt-lg btn-block">SUBMIT</button>
+                                
+                                </form>
+                        </div>
+                </div>
+
+                <div id="readCollection"  class="card text-white bg-success mb-3" style="max-width: 20rem;" >
+                    <h3 class="card-header">View Collections</h3>
+                        <div class="card-body">
+                            <div class="stamp-img"><img  alt="stamp icon" src="https://img.icons8.com/doodle/96/000000/post-stamp--v1.png"/></div>
+                            <br/>
+                            <button id="readAllCollections" class="btn btn-secondary bt-lg btn-block">VIEW ALL</button>
+                        </div>
+                </div>
+
+                <div id="updateCollections" class="card text-white bg-info mb-3" style="max-width: 20rem;" >
+                    <h3 class="card-header">Update a Collection</h3>
+
+                    <div class="card-body">
+                        <label for="collectionIdUpdate" class="card-text">Collection ID</label>
+                        <br/>
+                        <input class="spacing-intput" type="number" id="collectionIdUpdate"/>
+                        <br/>
+
+                        <br/>
+                        <button id="updateCollectionBtn" class="btn btn-secondary bt-lg btn-block">UPDATE</button>
+                    </div>
+                </div>
+
+                <div id="deleteCollection"  class="card text-white bg-danger mb-3" style="max-width: 20rem;" >
+                    <h3 class="card-header">Delete a Collection</h3>
+                        <div class="card-body">
+                            <label for="collectionIdDelete" class="card-text">Collection ID</label>
+                            <br/>
+                            <input class="spacing-intput" type="number" id="collectionIdDelete"/>
+                            <br/>
+
+                            <br/>
+                            <button id="deleteCollectionBtn" class="btn btn-secondary bt-lg btn-block">DELETE</button>
+                        </div>
+                </div>
+
+        </div>
+    </div>
+
+        <div class="stamp-section">
+
+        <div class="stamp-head">
+            <h3 id="stamp-head">STAMPS</h3>
+        </div>
+        
+
         <div class="container-grid">
                 <div id="createStamp" class="card text-white bg-warning mb-3" style="max-width: 20rem;" >
-                    <h2 class="card-header">Create A Stamp</h2>
+                    <h3 class="card-header">Create a Stamp</h3>
                         <div class="card-body">
                             <form id="createStampForm">
                                 <label for="stampName" class="card-text">Stamp Name</label>
@@ -37,55 +116,52 @@
                                 <br/>
 
                                 <br/>
-                                <button>SUBMIT</button>
+                                <button id="collectionBtnSubmit" class="btn btn-secondary bt-lg btn-block">SUBMIT</button>
                             
                             </form>
                     </div>
             </div>
 
             <div id="readStamp"  class="card text-white bg-success mb-3" style="max-width: 20rem;" >
-                <h2 class="card-header">View Stamps</h2>
+                <h3 class="card-header">View Stamps</h3>
                     <div class="card-body">
-                        <button id="readAll">VIEW ALL</button>
+                        <div class="stamp-img" ><img src="https://img.icons8.com/clouds/100/000000/open-envelope-stamp.png"/></div>
+                        
+                        <br/>
+                        <button id="readAll" class="btn btn-secondary bt-lg btn-block">VIEW ALL</button>
                     </div>
             </div>
 
             <div id="updateStamp" class="card text-white bg-info mb-3" style="max-width: 20rem;" >
-                <h2 class="card-header">Update A Stamp</h2>
+                <h3 class="card-header">Update a Stamp</h3>
 
                 <div class="card-body">
                     <label for="stampIdUpdate" class="card-text">Stamp ID</label>
                     <br/>
-                    <input type="number" id="stampIdUpdate"/>
+                    <input class="spacing-intput" type="number" id="stampIdUpdate"/>
                     <br/>
 
-                    <label for="stampToUpdate" class="card-text">Entity to Update</label>
                     <br/>
-                    <input type="text" id="stampToUpdate"/>
-                    <br/>
-
-                    <label for="entityToUpdate" class="card-text">Insert Update</label>
-                    <br/>
-                    <input type="text" id="entityToUpdate"/>
-                    <br/>
-
-                    <button id="updateStampBtn">UPDATE</button>
+                    <button id="updateStampBtn" class="btn btn-secondary bt-lg btn-block">UPDATE</button>
                 </div>
             </div>
 
             <div id="deleteStamp"  class="card text-white bg-danger mb-3" style="max-width: 20rem;" >
-                <h2 class="card-header">Delete a Stamp</h2>
+                <h3 class="card-header">Delete a Stamp</h3>
                     <div class="card-body">
                         <label for="stampIdDelete" class="card-text">Stamp ID</label>
                         <br/>
-                        <input type="number" id="stampIdDelete"/>
+                        <input class="spacing-intput" type="number" id="stampIdDelete"/>
                         <br/>
 
-                        <button id="deleteStampBtn">DELETE</button>
+                        <br/>
+                        <button id="deleteStampBtn" class="btn btn-secondary bt-lg btn-block">DELETE</button>
                     </div>
             </div>
 
         </div>
+        <a href="https://icons8.com/icon/81242/post-stamp">Post Stamp icon by Icons8</a>
+    </div>
     </body>
     <script src="./Fontend/js/index.js"></script>
 </html>
