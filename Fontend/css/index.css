@@ -2,10 +2,43 @@ body {
     margin-left: 20%;
     margin-right: 20%;
 }
+.top-heading {
+    background-color: #323232;
+    color: white;
+}
+#top-heading {
+    margin: 0 20px 20px 20px;
+    text-align: center;
+}
+
+
+
+#collection-head {
+    margin: 20px 20px 5px 20px;
+    text-align: center;
+    color: #323232;
+}
+
+
+#stamp-head {
+    margin: 20px 20px 5px 20px;
+    text-align: center;
+    color: #323232;
+}
 
 .container-grid {
     display: grid;
     grid-template-columns: auto auto;
-    margin: 10%;
+    margin: 2% 10% 6% 10%;
+}
+
+#stamp-heading {
+    justify-content: center;
+    margin: 10px;
+}
+
+.btn {
+    margin: 8px 0 5px 0;
+    
 }
 
