@@ -1,6 +1,7 @@
 "use strict;"
 
 const BASE_URL = "http://localhost:8082";
+const collectionOutput = document.getElementById("collectionOutputDiv");
 
 //event listeners for CRUD stamp + collection
 (function () {
@@ -14,30 +15,30 @@ const BASE_URL = "http://localhost:8082";
         data.collectionValue = this.collectionValue.value;
 
         axios.post(BASE_URL + "/collection/create", data)
-        .then(res => console.log(res))
+        .then(res => console.log(res)) //sort this to show at bottom of page once submitted
         .catch(err => console.log(err));
     });
 
+    document.getElementById("readAllCollections").addEventListener("click", function() {
+        axios.get(BASE_URL + "collection/read")
+        .then(res => {
+            res.data.forEach((collection, i) => {
+                const colElements = makeElements("div", "", collectionOutput, "");
+
+                colElements.id = "collection" + i;
+
+                makeElements("h2", `Theme: ${collection.theme}`, collectOut, "");
+                makeElements("p", `Value: ${collection.value}`, collectOut, "");
+            })
+        })
+    })
 
 })();
 
 
 //need a function that displays the created collection/stamp
 
-//add a div to display info
-//need to change to axios
-function collectionElements() {
-    fetch(BASE_URL + "/collection/read")
-    .then(res => JSON())
-    .then(json => {
-        json.forEach(stampCollection => {
-            const collection = document.getElementById("collectionOutput");
-            const collectOut = makeElements("div", "", collection, "");
-            makeElements("h2", `Theme: ${stampCollection.theme}`, collectOut, "");
-            makeElements("p", `Value: ${stampCollection.value}`, collectOut, "");
-        })
-    })
-}
+
 
 
 //function to add elements
