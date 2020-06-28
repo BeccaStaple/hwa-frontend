@@ -20,21 +20,14 @@
                         <h3 class="card-header">Create a Collection</h3>
                             <div class="card-body">
                                 <form id="createCollectionForm">
-                                    <label for="collectionName" class="card-text">Collection Name</label>
-                                    <br/>
-                                    <input type="text" placeholder="Collection Name" id="collectionName"/>
-                                    <br/>
-
-                                    <label for="collectionValue" class="card-text">Value</label>
-                                    <br/>
-                                    <input type="number" placeholder="Value" id="collectionValue"/>
-                                    <br/>
-
-                                    
-
                                     <label for="themeName" class="card-text">Collection Theme</label>
                                     <br/>
-                                    <input type="text" placeholder="Theme" id="themeName"/>
+                                    <input name="theme" type="text" placeholder="Theme" id="themeName"/>
+                                    <br/>
+                                    
+                                    <label for="collectionValue" class="card-text">Value</label>
+                                    <br/>
+                                    <input step="0.01" name="collectionValue" type="number" placeholder="Value" id="collectionValue"/>
                                     <br/>
 
                                     <br/>
@@ -59,7 +52,7 @@
                     <div class="card-body">
                         <label for="collectionIdUpdate" class="card-text">Collection ID</label>
                         <br/>
-                        <input class="spacing-intput" type="number" id="collectionIdUpdate"/>
+                        <input name="collectionIdUpdate" class="spacing-intput" type="number" id="collectionIdUpdate"/>
                         <br/>
 
                         <br/>
@@ -72,7 +65,7 @@
                         <div class="card-body">
                             <label for="collectionIdDelete" class="card-text">Collection ID</label>
                             <br/>
-                            <input class="spacing-intput" type="number" id="collectionIdDelete"/>
+                            <input name="collectionIdDelete" class="spacing-intput" type="number" id="collectionIdDelete"/>
                             <br/>
 
                             <br/>
@@ -81,6 +74,8 @@
                 </div>
 
         </div>
+
+        <div id="collectionOutput"></div>
     </div>
 
         <div class="stamp-section">
@@ -97,22 +92,22 @@
                             <form id="createStampForm">
                                 <label for="stampName" class="card-text">Stamp Name</label>
                                 <br/>
-                                <input type="text" placeholder="Stamp Name" id="stampName"/>
+                                <input name="stampName" type="text" placeholder="Stamp Name" id="stampName"/>
                                 <br/>
 
                                 <label for="stampValue" class="card-text">Value</label>
                                 <br/>
-                                <input type="number" placeholder="Value" id="stampValue"/>
+                                <input name="stampValue" step="0.01" type="number" placeholder="Value" id="stampValue"/>
                                 <br/>
 
                                 <label for="yearMade" class="card-text">Year Made</label>
                                 <br/>
-                                <input type="number" placeholder="Year Made" id="yearMade"/>
+                                <input name="yearMade" type="number" placeholder="Year Made" id="yearMade"/>
                                 <br/>
 
                                 <label for="fkCollectionId" class="card-text">Collection ID Number</label>
                                 <br/>
-                                <input type="number" placeholder="Collection ID" id="fkCollectionId"/>
+                                <input name="fkCollectionId" type="number" placeholder="Collection ID" id="fkCollectionId"/>
                                 <br/>
 
                                 <br/>
@@ -138,7 +133,7 @@
                 <div class="card-body">
                     <label for="stampIdUpdate" class="card-text">Stamp ID</label>
                     <br/>
-                    <input class="spacing-intput" type="number" id="stampIdUpdate"/>
+                    <input name="stampIdUpdate" class="spacing-intput" type="number" id="stampIdUpdate"/>
                     <br/>
 
                     <br/>
@@ -151,7 +146,7 @@
                     <div class="card-body">
                         <label for="stampIdDelete" class="card-text">Stamp ID</label>
                         <br/>
-                        <input class="spacing-intput" type="number" id="stampIdDelete"/>
+                        <input name="stampIdDelete" class="spacing-intput" type="number" id="stampIdDelete"/>
                         <br/>
 
                         <br/>
@@ -164,5 +159,6 @@
     </div>
     </body>
     <script src="./js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 </html>
 
