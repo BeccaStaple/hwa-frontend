@@ -5,6 +5,8 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
 
 //event listeners for CRUD stamp + collection
 (function () {
+
+   
     
     document.getElementById("createCollectionForm").addEventListener("submit", function(event) {
         event.preventDefault();
@@ -15,7 +17,7 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
         data.collectionValue = this.collectionValue.value;
 
         axios.post(BASE_URL + "/collection/create", data)
-        .then(res => console.log(res)) //sort this to show at bottom of page once submitted
+        .then(res => alert(res + "has been created"))
         .catch(err => console.log(err));
     });
 
@@ -27,21 +29,22 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
 
                 colElements.id = "collection" + i;
 
-                makeElements("h2", `Theme: ${collection.theme}`, collectOut, "");
-                makeElements("p", `Value: ${collection.value}`, collectOut, "");
+                makeElements("h2", `Theme: ${collection.theme}`, colElements, "");
+                makeElements("p", `Value: ${collection.value}`, colElements, "");
             })
         })
     })
 
+    document.getElementById("deleteCollectionBtn").addEventListener("click", function () {
+        let deleteInput = document.getElementById("collectionIdDelete");
+        axios.delete(BASE_URL + "/collection/delete/" + deleteInput.value)
+        .then(res => alert(res + " has been deleted"))
+        .catch(err => console.log(err));
+    })
+
+
 })();
 
-
-//need a function that displays the created collection/stamp
-
-
-
-
-//function to add elements
 function makeElements(elementType, text, appendTo, className) {
     const element = document.createElement(elementType);
     element.innerText = text;
@@ -49,3 +52,4 @@ function makeElements(elementType, text, appendTo, className) {
     element.className = className;
     return element;
 }
+
