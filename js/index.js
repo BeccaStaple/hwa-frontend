@@ -3,10 +3,7 @@
 const BASE_URL = "http://localhost:8082";
 const collectionOutput = document.getElementById("collectionOutputDiv");
 
-//event listeners for CRUD stamp + collection
 (function () {
-
-   
     
     document.getElementById("createCollectionForm").addEventListener("submit", function(event) {
         event.preventDefault();
@@ -24,6 +21,7 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
     document.getElementById("readAllCollections").addEventListener("click", function() {
         axios.get(BASE_URL + "collection/read")
         .then(res => {
+            collectionOutput.innerText = " ";
             res.data.forEach((collection, i) => {
                 const colElements = makeElements("div", "", collectionOutput, "");
 
@@ -31,16 +29,29 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
 
                 makeElements("h2", `Theme: ${collection.theme}`, colElements, "");
                 makeElements("p", `Value: ${collection.value}`, colElements, "");
-            })
-        })
-    })
+            }).catch(err => console.log(err));
+        });
+    });
 
     document.getElementById("deleteCollectionBtn").addEventListener("click", function () {
         let deleteInput = document.getElementById("collectionIdDelete");
         axios.delete(BASE_URL + "/collection/delete/" + deleteInput.value)
         .then(res => alert(res + " has been deleted"))
         .catch(err => console.log(err));
-    })
+    });
+
+
+    document.getElementById("updateStampBtn").addEventListener("click", function() {
+        const data = {};
+
+        data.theme = this.theme.value;
+        data.collectionValue = this.collectionValue.value;
+
+        axios.put(BASE_URL + "/collection/update", data)
+        .then(res => alert(res + "has been updated"))
+        .catch(err => console.log(err));
+    });
+
 
 
 })();
