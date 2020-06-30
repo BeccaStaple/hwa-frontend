@@ -19,10 +19,10 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
     });
 
     document.getElementById("readAllCollections").addEventListener("click", function() {
-        axios.get(BASE_URL + "collection/read")
+        axios.get(BASE_URL + "/collection/read")
         .then(res => {
             collectionOutput.innerText = " ";
-            res.data.forEach(collection => {
+            res.data.forEach((collection, i)=> {
                 const colElements = makeElements("div", "", collectionOutput, "");
 
                 colElements.id = "collection" + i;
@@ -45,7 +45,7 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
         const data = {};
 
         data.theme = this.theme.value;
-        data.collectionValue = this.collectionValue.value;
+        data.value = this.value.value;
 
         axios.put(BASE_URL + "/collection/update", data)
         .then(res => alert(res + "has been updated"))
