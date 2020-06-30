@@ -11,10 +11,10 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
         const data = {};
 
         data.theme = this.theme.value;
-        data.collectionValue = this.collectionValue.value;
+        data.value = this.value.value;
 
         axios.post(BASE_URL + "/collection/create", data)
-        .then(res => alert(res + "has been created"))
+        .then(res => alert(res.data + "has been created"))
         .catch(err => console.log(err));
     });
 
@@ -22,7 +22,7 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
         axios.get(BASE_URL + "collection/read")
         .then(res => {
             collectionOutput.innerText = " ";
-            res.data.forEach((collection, i) => {
+            res.data.forEach(collection => {
                 const colElements = makeElements("div", "", collectionOutput, "");
 
                 colElements.id = "collection" + i;
