@@ -25,15 +25,28 @@
                                     <input name="theme" type="text" placeholder="Theme" id="themeName"/>
                                     <br/>
                                     
-                                    <label for="collectionValue" class="card-text">Value</label>
+                                    <label for="value" class="card-text">Value</label>
                                     <br/>
-                                    <input step="0.01" name="collectionValue" type="number" placeholder="Value" id="collectionValue"/>
+                                    <input step="0.01" name="value" type="number" placeholder="Value" id="collectionValue"/>
                                     <br/>
 
                                     <br/>
                                     <button id="submitNewCollection" class="btn btn-secondary bt-lg btn-block">SUBMIT</button>
                                 
                                 </form>
+                        </div>
+                </div>
+
+                <div id="deleteCollection"  class="card text-white bg-danger mb-3" style="max-width: 20rem;" >
+                    <h3 class="card-header">Delete a Collection</h3>
+                        <div class="card-body">
+                            <label for="collectionIdDelete" class="card-text">Collection ID</label>
+                            <br/>
+                            <input name="collectionIdDelete" class="spacing-intput" type="number" id="collectionIdDelete"/>
+                            <br/>
+
+                            <br/>
+                            <button id="deleteCollectionBtn" class="btn btn-secondary bt-lg btn-block">DELETE</button>
                         </div>
                 </div>
 
@@ -60,22 +73,11 @@
                     </div>
                 </div>
 
-                <div id="deleteCollection"  class="card text-white bg-danger mb-3" style="max-width: 20rem;" >
-                    <h3 class="card-header">Delete a Collection</h3>
-                        <div class="card-body">
-                            <label for="collectionIdDelete" class="card-text">Collection ID</label>
-                            <br/>
-                            <input name="collectionIdDelete" class="spacing-intput" type="number" id="collectionIdDelete"/>
-                            <br/>
-
-                            <br/>
-                            <button id="deleteCollectionBtn" class="btn btn-secondary bt-lg btn-block">DELETE</button>
-                        </div>
-                </div>
+                
 
         </div>
 
-        <div id="collectionOutput"></div>
+        <div id="collectionOutputDiv"></div>
     </div>
 
         <div class="stamp-section">
@@ -117,6 +119,19 @@
                     </div>
             </div>
 
+            <div id="deleteStamp"  class="card text-white bg-danger mb-3" style="max-width: 20rem;" >
+                <h3 class="card-header">Delete a Stamp</h3>
+                    <div class="card-body">
+                        <label for="stampIdDelete" class="card-text">Stamp ID</label>
+                        <br/>
+                        <input name="stampIdDelete" class="spacing-intput" type="number" id="stampIdDelete"/>
+                        <br/>
+
+                        <br/>
+                        <button id="deleteStampBtn" class="btn btn-secondary bt-lg btn-block">DELETE</button>
+                    </div>
+            </div>
+
             <div id="readStamp"  class="card text-white bg-success mb-3" style="max-width: 20rem;" >
                 <h3 class="card-header">View Stamps</h3>
                     <div class="card-body">
@@ -141,18 +156,7 @@
                 </div>
             </div>
 
-            <div id="deleteStamp"  class="card text-white bg-danger mb-3" style="max-width: 20rem;" >
-                <h3 class="card-header">Delete a Stamp</h3>
-                    <div class="card-body">
-                        <label for="stampIdDelete" class="card-text">Stamp ID</label>
-                        <br/>
-                        <input name="stampIdDelete" class="spacing-intput" type="number" id="stampIdDelete"/>
-                        <br/>
-
-                        <br/>
-                        <button id="deleteStampBtn" class="btn btn-secondary bt-lg btn-block">DELETE</button>
-                    </div>
-            </div>
+            
 
         </div>
         <a href="https://icons8.com/icon/81242/post-stamp">Post Stamp icon by Icons8</a>
