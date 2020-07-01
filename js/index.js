@@ -22,13 +22,22 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
         axios.get(BASE_URL + "/collection/read")
         .then(res => {
             collectionOutput.innerText = " ";
+            const colElements = makeElements("div", "", collectionOutput, "");
+                const colTable = makeElements("table", "", colElements, "table table-striped");
+                const colTableBody = makeElements("tbody", "", colTable, "");
+                const colColumns = makeElements("tr", "", colTableBody, "");
+                makeElements("th", "ID", colColumns, "");
+                        makeElements("th", "Theme", colColumns, "");
+                        makeElements("th", "Value", colColumns, "");
             res.data.forEach((collection, i)=> {
-                const colElements = makeElements("div", "", collectionOutput, "");
+                
+                
+                    makeElements("tr", "", colTableBody, "");
+                        makeElements("td", collection.id, colTableBody, ""); 
+                        makeElements("td", collection.theme, colTableBody, "");
+                        makeElements("td", collection.value, colTableBody, "");
 
-                colElements.id = "collection" + i;
-
-                makeElements("h2", `Theme: ${collection.theme}`, colElements, "");
-                makeElements("p", `Value: ${collection.value}`, colElements, "");
+                
             }).catch(err => console.log(err));
         });
     });
@@ -38,18 +47,20 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
         let inputId = deleteInput.value;
 
         axios.delete(BASE_URL + "/collection/delete/" + inputId)
-        .then(res => alert("The " + res.inputId + " collection has been deleted"))
+        .then(res => alert("The collection with ID of " + res.data.inputId + " has been deleted"))
         .catch(err => console.log(err));
     });
 
 
     document.getElementById("updateStampBtn").addEventListener("click", function() {
         const data = {};
+        let updateInput = document.getElementById("collectionIdUpdate");
+        let updateId = updateInput.value;
 
         data.theme = this.theme.value;
         data.value = this.value.value;
 
-        axios.put(BASE_URL + "/collection/update", data)
+        axios.put(BASE_URL + "/collection/update/", data)
         .then(res => alert(res + "has been updated"))
         .catch(err => console.log(err));
     });
