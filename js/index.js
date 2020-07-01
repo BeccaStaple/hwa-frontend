@@ -14,7 +14,7 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
         data.value = this.value.value;
 
         axios.post(BASE_URL + "/collection/create", data)
-        .then(res => alert(res.data.theme + " collection has been created"))
+        .then(res => alert("The " + res.data.theme + " collection has been created"))
         .catch(err => console.log(err));
     });
 
@@ -35,8 +35,10 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
 
     document.getElementById("deleteCollectionBtn").addEventListener("click", function () {
         let deleteInput = document.getElementById("collectionIdDelete");
-        axios.delete(BASE_URL + "/collection/delete/" + deleteInput.value)
-        .then(res => alert(res.deleteInput.value + " collection has been deleted"))
+        let inputId = deleteInput.value;
+
+        axios.delete(BASE_URL + "/collection/delete/" + inputId)
+        .then(res => alert("The " + res.inputId + " collection has been deleted"))
         .catch(err => console.log(err));
     });
 
