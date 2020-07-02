@@ -82,20 +82,22 @@
 
             <div id="myModal" class="modal">
               <div class="modal-content">
-                <span id="closeCollectionBtn" onclick="closeMyCollectionModal();">&times;</span>
+                  <div class="close">
+                <span  id="closeCollectionBtn" onclick="closeMyCollectionModal();">&times;</span>
+            </div>
                 <div id="inputUpdateCollection">
                         <h3>Update Collection</h2>
                             <div id="updateCollectionOutput"></div>
                                     <label for="themeUpdateInput">Theme</label>
                                     <br/>
-                                        <input name="theme" type="text" id="themeUpdateInput"/>
+                                        <input class="form-group" name="theme" type="text" id="themeUpdateInput"/>
                                     <br/>
                                     <label for="valueUpdateInput" type="number" step="0.01">Value</label>
                                     <br/>
-                                        <input name="value" type="text" id="valueUpdateInput"/>
-                <div id="buttons">
-                    <button type="button" class="updateButtons" id="updateCollectionBtn">Update</button>
-                    <button type="button" class="updateButtons" onclick="closeMyCollectionModal();" data-dismiss="modal">Cancel</button>
+                                        <input class="form-group" name="value" type="text" id="valueUpdateInput"/>
+                <div class="modal-footer">
+                    <button type="button" class="btn-info" id="updateCollectionBtn">Update</button>
+                    <button type="button" class="btn-dark" onclick="closeMyCollectionModal();" data-dismiss="modal">Cancel</button>
                 </div>
                 </div>
                 

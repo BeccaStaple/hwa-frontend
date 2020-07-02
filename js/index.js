@@ -60,10 +60,18 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
 
         let updatedValue = document.getElementById("valueUpdateInput").value;
 
-        data.theme = updatedTheme;
-        data.value = updatedValue;
-
-
+        if (data.theme != "") {
+            data.theme = updatedTheme;
+        } else {
+            data.theme = currentTheme;
+        }
+        
+        if (data.value != "") {
+            data.value = updatedValue;
+        } else {
+            data.value = currentValue;
+        }
+  
         axios.put(BASE_URL + "/collection/update/" + updateId, data)
         .then(alert("This collection has been updated"))
         .then(closeMyCollectionModal())
@@ -84,14 +92,9 @@ function makeElements(elementType, text, appendTo, className) {
 
 function openMyCollectionModal() {
     document.getElementById("myModal").style.display = "block";
-    const data = {};
-    const updateOutput = document.getElementById("updateCollectionOutput");
-    let readUpdateOutput = makeElements("div", "", updateOutput, "");
     let idInputUpdate = document.getElementById("collectionIdUpdate");
     let colToUpdate = idInputUpdate.value;
 
-    
-    
     axios.get(BASE_URL + "/collection/read/" + colToUpdate)
     .then(res => {
             document.getElementById("themeUpdateInput").placeholder = res.data.theme;
