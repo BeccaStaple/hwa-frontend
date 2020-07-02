@@ -1,6 +1,6 @@
 body {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 
@@ -31,7 +31,6 @@ body {
     display: grid;
     grid-template-columns: auto auto;
     margin: 2% 7% 6% 7%;
-    justify-content: center;
 }
 
 #stamp-heading {

@@ -12,10 +12,10 @@
     
     
     
-    <div class="collection-section">
-        <div class="collection-head">
-            <h2 id="collection-head">COLLECTIONS</h2>
-        </div>
+        <div class="collection-section">
+            <div class="collection-head">
+                <h2 id="collection-head">COLLECTIONS</h2>
+            </div>
         
 
             <div class="container-grid">
@@ -24,204 +24,194 @@
                             <div class="card-body">
                                 <form id="createCollectionForm">
                                     <label for="themeName" class="card-text">Collection Theme</label>
-                                    <br/>
+                                        <br/>
                                     <input name="theme" type="text" placeholder="Theme" id="themeName"/>
-                                    <br/>
-                                    
+                                        <br/>
+                                        
                                     <label for="value" class="card-text">Value</label>
-                                    <br/>
+                                        <br/>
                                     <input step="0.01" name="value" type="number" placeholder="Value" id="collectionValue"/>
-                                    <br/>
+                                        <br/>
 
-                                    <br/>
+                                        <br/>
                                     <button id="submitNewCollection" class="btns btn btn-secondary bt-lg btn-block">SUBMIT</button>
-                                
+                                    
                                 </form>
-                        </div>
-                </div>
-
-                <div id="deleteCollection"  class="card text-white bg-danger mb-3" style="max-width: 20rem;" >
-                    <h3 class="card-header">Delete a Collection</h3>
-                        <div class="card-body">
-                            <label for="collectionIdDelete" class="card-text">Collection ID</label>
-                            <br/>
-                            <input name="collectionIdDelete" class="spacing-intput" type="number" id="collectionIdDelete"/>
-                            <br/>
-
-                            <br/>
-                            <button id="deleteCollectionBtn" class="btns btn btn-secondary bt-lg btn-block">DELETE</button>
-                        </div>
-                </div>
-
-                <div id="readCollection"  class="card text-white bg-success mb-3" style="max-width: 20rem;" >
-                    <h3 class="card-header">View Collections</h3>
-                        <div class="card-body">
-                            <div class="stamp-img"><img  alt="stamp icon" src="https://img.icons8.com/doodle/96/000000/post-stamp--v1.png"/></div>
-                            <br/>
-                            <button id="readAllCollections" class="btns btn btn-secondary bt-lg btn-block">VIEW ALL</button>
-                        </div>
-                </div>
-
-                <div id="updateCollections" class="card text-white bg-info mb-3" style="max-width: 20rem;" >
-                    <h3 class="card-header">Update a Collection</h3>
-
-                    <div class="card-body">
-                        <label for="collectionIdUpdate" class="card-text">Collection ID</label>
-                        <br/>
-                        <input name="collectionIdUpdate" class="spacing-intput" type="number" id="collectionIdUpdate"/>
-                        <br/>
-
-                        <br/>
-                        <button id="openUpdateModal" onclick="openMyCollectionModal();" class="btns btn btn-secondary bt-lg btn-block" data-toggle="modal" data-target="#staticBackdrop">UPDATE</button>
+                            </div>
                     </div>
-                </div>
+
+                    <div id="deleteCollection"  class="card text-white bg-danger mb-3" style="max-width: 20rem;" >
+                        <h3 class="card-header">Delete a Collection</h3>
+                            <div class="card-body">
+                                <label for="collectionIdDelete" class="card-text">Collection ID</label>
+                                    <br/>
+                                <input name="collectionIdDelete" class="spacing-intput" type="number" id="collectionIdDelete"/>
+                                    <br/>
+
+                                    <br/>
+                                <button id="deleteCollectionBtn" class="btns btn btn-secondary bt-lg btn-block">DELETE</button>
+                            </div>
+                    </div>
+
+                    <div id="readCollection"  class="card text-white bg-success mb-3" style="max-width: 20rem;" >
+                        <h3 class="card-header">View Collections</h3>
+                            <div class="card-body">
+                                <div class="stamp-img"><img  alt="stamp icon" src="https://img.icons8.com/doodle/96/000000/post-stamp--v1.png"/></div>
+                                    <br/>
+                                <button id="readAllCollections" class="btns btn btn-secondary bt-lg btn-block">VIEW ALL</button>
+                            </div>
+                    </div>
+
+                    <div id="updateCollections" class="card text-white bg-info mb-3" style="max-width: 20rem;" >
+                        <h3 class="card-header">Update a Collection</h3>
+
+                        <div class="card-body">
+                            <label for="collectionIdUpdate" class="card-text">Collection ID</label>
+                                <br/>
+                            <input name="collectionIdUpdate" class="spacing-intput" type="number" id="collectionIdUpdate"/>
+                                <br/>
+
+                                <br/>
+                            <button id="openUpdateModal" onclick="openMyCollectionModal();" class="btns btn btn-secondary bt-lg btn-block" data-toggle="modal" data-target="#staticBackdrop">UPDATE</button>
+                        </div>
+                    </div>
 
             </div>
 
             <div id="collectionOutputDiv"></div>
 
 
-            <div id="myModal" class="modal">
-              <div class="modal-content">
-                  <div class="close">
-                <span  id="closeCollectionBtn" onclick="closeMyModal();">&times;</span>
-            </div>
-                <div id="inputUpdateCollection">
-                        <h3 class="modal-title">Update Collection</h2>
-                            <div id="updateCollectionOutput"></div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="close">
+                            <span  id="closeCollectionBtn" onclick="closeMyModal();">&times;</span>
+                        </div>
+
+                        <div id="inputUpdateCollection">
+                            <h3 class="modal-title">Update Collection</h2>
+                                <div id="updateCollectionOutput"></div>
                                     <label for="themeUpdateInput">Theme</label>
-                                    <br/>
-                                        <input class="form-group" name="theme" type="text" id="themeUpdateInput"/>
-                                    <br/>
+                                        <br/>
+                                    <input class="form-group" name="theme" type="text" id="themeUpdateInput"/>
+                                        <br/>
                                     <label for="valueUpdateInput" type="number" step="0.01">Value</label>
-                                    <br/>
-                                        <input class="form-group" name="value" type="text" id="valueUpdateInput"/>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="updateCollectionBtn">Update</button>
-                    <button type="button" class="btn btn-secondary" onclick="closeMyModal();" data-dismiss="modal">Cancel</button>
-                </div>
-                </div>
-                
-                </div>
-            
-            </div>
-    </div>
-                   
-                        
-
-                    <div class="stamp-section">
-
-                            <div class="stamp-head">
-                                <h3 id="stamp-head">STAMPS</h3>
-                            </div>
-                            
-
-                                <div class="container-grid">
-                                        <div id="createStamp" class="card text-white bg-warning mb-3" style="max-width: 20rem;" >
-                                            <h3 class="card-header">Create a Stamp</h3>
-                                                <div class="card-body">
-                                                    <form id="createStampForm">
-                                                        <label for="stampName" class="card-text">Stamp Name</label>
-                                                        <br/>
-                                                        <input name="name" type="text" placeholder="Stamp Name" id="stampName"/>
-                                                        <br/>
-
-                                                        <label for="stampValue" class="card-text">Value</label>
-                                                        <br/>
-                                                        <input name="value" step="0.01" type="number" placeholder="Value" id="stampValue"/>
-                                                        <br/>
-
-                                                        <label for="yearMade" class="card-text">Year Made</label>
-                                                        <br/>
-                                                        <input name="yearMade" type="number" placeholder="Year Made" id="yearMade"/>
-                                                        <br/>
-
-                                                        <label for="fkCollectionId" class="card-text">Collection ID Number</label>
-                                                        <br/>
-                                                        <input name="collectionId" type="number" placeholder="Collection ID" id="fkCollectionId"/>
-                                                        <br/>
-
-                                                        <br/>
-                                                        <button id="collectionBtnSubmit" class="btns btn btn-secondary bt-lg btn-block">SUBMIT</button>
-                                                    
-                                                    </form>
-                                            </div>
-                                    </div>
-
-                                    <div id="deleteStamp"  class="card text-white bg-danger mb-3" style="max-width: 20rem;" >
-                                        <h3 class="card-header">Delete a Stamp</h3>
-                                            <div class="card-body">
-                                                <label for="stampIdDelete" class="card-text">Stamp ID</label>
-                                                <br/>
-                                                <input name="stampIdDelete" class="spacing-intput" type="number" id="stampIdDelete"/>
-                                                <br/>
-
-                                                <br/>
-                                                <button id="deleteStampBtn" class="btns btn btn-secondary bt-lg btn-block">DELETE</button>
-                                            </div>
-                                    </div>
-
-                                    <div id="readStamp"  class="card text-white bg-success mb-3" style="max-width: 20rem;" >
-                                        <h3 class="card-header">View Stamps</h3>
-                                            <div class="card-body">
-                                                <div class="stamp-img" ><img src="https://img.icons8.com/clouds/100/000000/open-envelope-stamp.png"/></div>
-                                                
-                                                <br/>
-                                                <button id="readAllStamps" class="btns btn btn-secondary bt-lg btn-block">VIEW ALL</button>
-                                            </div>
-                                    </div>
-
-                                    <div id="updateStamp" class="card text-white bg-info mb-3" style="max-width: 20rem;" >
-                                        <h3 class="card-header">Update a Stamp</h3>
-
-                                        <div class="card-body">
-                                            <label for="stampIdUpdate" class="card-text">Stamp ID</label>
-                                            <br/>
-                                            <input name="stampIdUpdate" class="spacing-intput" type="number" id="stampIdUpdate"/>
-                                            <br/>
-
-                                            <br/>
-                                            <button onclick="openMyStampModal();" id="updateStampBtn" class="btns btn btn-secondary bt-lg btn-block">UPDATE</button>
-                                        </div>
-                                    </div>
-                            </div>
-
-        <div id="readStampOutput"></div>
-
-                    <div id="myStampModal" class="modal">
-                        <div class="modal-content">
-                            <div class="close">
-                                <span  id="closeStampBtn" onclick="closeMyModal();">&times;</span>
-                            </div>
-                        <div id="inputUpdateStamp">
-                                <h3 class="modal-title">Update Collection</h2>
-                                            <label for="nameUpdateInput">Name</label>
-                                                <br/>
-                                                    <input class="form-group" name="theme" type="text" id="nameUpdateInput"/>
-                                                        <br/>
-                                            <label for="valueStampUpdateInput" type="number" step="0.01">Value</label>
-                                                <br/>
-                                                <input class="form-group" name="value" type="text" id="valueStampUpdateInput"/>
-                                                    <br/>
-                                            <label for="yearMadeUpdateInput" type="number" step="0.01">Value</label>
-                                                <br/>
-                                                    <input class="form-group" name="value" type="text" id="yearMadeUpdateInput"/>
-                                                        <br/>
-                                            <label for="colIdStampUpdateInput" type="number" step="0.01">Value</label>
-                                                <br/>
-                                                    <input class="form-group" name="value" type="text" id="colIdStampUpdateInput"/>
-                                                        
+                                        <br/>
+                                    <input class="form-group" name="value" type="text" id="valueUpdateInput"/>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" id="updateStampBtn">Update</button>
+                                <button type="button" class="btn btn-primary" id="updateCollectionBtn">Update</button>
                                 <button type="button" class="btn btn-secondary" onclick="closeMyModal();" data-dismiss="modal">Cancel</button>
                             </div>
                         </div>
+                
+                    </div>
+            
+                </div>
+        </div>
+                   
                         
-                        </div>
-                    
+
+        <div class="stamp-section">
+            <div class="stamp-head">
+                <h3 id="stamp-head">STAMPS</h3>
+            </div>
+
+                <div class="container-grid">
+                    <div id="createStamp" class="card text-white bg-warning mb-3" style="max-width: 20rem;" >
+                        <h3 class="card-header">Create a Stamp</h3>
+                            <div class="card-body">
+                                <form id="createStampForm">
+                                    <label for="stampName" class="card-text">Stamp Name</label>
+                                        <br/>
+                                    <input name="name" type="text" placeholder="Stamp Name" id="stampName"/>
+                                        <br/>
+                                    <label for="stampValue" class="card-text">Value</label>
+                                        <br/>
+                                    <input name="value" step="0.01" type="number" placeholder="Value" id="stampValue"/>
+                                        <br/>
+                                    <label for="yearMade" class="card-text">Year Made</label>
+                                        <br/>
+                                    <input name="yearMade" type="number" placeholder="Year Made" id="yearMade"/>
+                                        <br/>
+                                    <label for="fkCollectionId" class="card-text">Collection ID Number</label>
+                                        <br/>
+                                    <input name="collectionId" type="number" placeholder="Collection ID" id="fkCollectionId"/>
+                                        <br/>
+                                        <br/>
+                                    <button id="collectionBtnSubmit" class="btns btn btn-secondary bt-lg btn-block">SUBMIT</button>
+                                                    
+                                </form>
+                            </div>
                     </div>
 
-            </div>
+                    <div id="deleteStamp"  class="card text-white bg-danger mb-3" style="max-width: 20rem;" >
+                        <h3 class="card-header">Delete a Stamp</h3>
+                            <div class="card-body">
+                                <label for="stampIdDelete" class="card-text">Stamp ID</label>
+                                    <br/>
+                                <input name="stampIdDelete" class="spacing-intput" type="number" id="stampIdDelete"/>
+                                    <br/>
+                                    <br/>
+                                <button id="deleteStampBtn" class="btns btn btn-secondary bt-lg btn-block">DELETE</button>
+                            </div>
+                    </div>
+
+                    <div id="readStamp"  class="card text-white bg-success mb-3" style="max-width: 20rem;" >
+                        <h3 class="card-header">View Stamps</h3>
+                            <div class="card-body">
+                                <div class="stamp-img" ><img src="https://img.icons8.com/clouds/100/000000/open-envelope-stamp.png"/></div>
+                                    <br/>
+                                <button id="readAllStamps" class="btns btn btn-secondary bt-lg btn-block">VIEW ALL</button>
+                            </div>
+                    </div>
+
+                    <div id="updateStamp" class="card text-white bg-info mb-3" style="max-width: 20rem;" >
+                        <h3 class="card-header">Update a Stamp</h3>
+                            <div class="card-body">
+                                <label for="stampIdUpdate" class="card-text">Stamp ID</label>
+                                    <br/>
+                                <input name="stampIdUpdate" class="spacing-intput" type="number" id="stampIdUpdate"/>
+                                    <br/>
+                                    <br/>
+                                <button onclick="openMyStampModal();" id="updateStampBtn" class="btns btn btn-secondary bt-lg btn-block">UPDATE</button>
+                            </div>
+                    </div>
+                </div>
+
+                <div id="readStampOutput"></div>
+
+                <div id="myStampModal" class="modal">
+                    <div class="modal-content">
+                        <div class="close">
+                            <span  id="closeStampBtn" onclick="closeMyModal();">&times;</span>
+                        </div>
+                            <div id="inputUpdateStamp">
+                                <h3 class="modal-title">Update Collection</h2>
+                                    <label for="nameUpdateInput">Name</label>
+                                        <br/>
+                                    <input class="form-group" name="theme" type="text" id="nameUpdateInput"/>
+                                        <br/>
+                                    <label for="valueStampUpdateInput" type="number" step="0.01">Value</label>
+                                        <br/>
+                                    <input class="form-group" name="value" type="text" id="valueStampUpdateInput"/>
+                                        <br/>
+                                    <label for="yearMadeUpdateInput" type="number" step="0.01">Value</label>
+                                        <br/>
+                                    <input class="form-group" name="value" type="text" id="yearMadeUpdateInput"/>
+                                        <br/>
+                                    <label for="colIdStampUpdateInput" type="number" step="0.01">Value</label>
+                                        <br/>
+                                    <input class="form-group" name="value" type="text" id="colIdStampUpdateInput"/>
+                                                                
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" id="updateStampBtn">Update</button>
+                                        <button type="button" class="btn btn-secondary" onclick="closeMyModal();" data-dismiss="modal">Cancel</button>
+                                    </div>
+                            </div>
+                        
+                    </div>
+                </div>
+
+        </div>
     
 
 
