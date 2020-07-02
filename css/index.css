@@ -43,7 +43,7 @@ body {
 }
 
 .stamp-img {
-    margin: 50px 0 10px 0;
+    margin: 30px 0 30px 0;
     text-align: center;
 }
 
@@ -72,10 +72,11 @@ body {
     z-index: 1; 
     left: 0;
     top: 0;
-    width: auto; 
+    width: 100%; 
     height: 100%; 
     overflow: auto;
-    margin: 10% 20%;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
   }
   
   .modal-content {
@@ -83,7 +84,7 @@ body {
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: auto; 
+    width: 40%; 
   }
   
   #closeCollectionBtn {
@@ -100,6 +101,11 @@ body {
     cursor: pointer;
   }
 
-  .updateButtons {
-     margin: 5%;
-  }
+.btn-dark {
+    border-radius: 12%;
+    box-shadow: 0;
+}
+
+.btn-info {
+    border-radius: 12%;
+}
