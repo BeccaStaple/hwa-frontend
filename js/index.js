@@ -2,6 +2,7 @@
 
 const BASE_URL = "http://localhost:8082";
 const collectionOutput = document.getElementById("collectionOutputDiv");
+const stampOutput = document.getElementById("readStampOutput");
 
 (function () {
     
@@ -74,9 +75,82 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
   
         axios.put(BASE_URL + "/collection/update/" + updateId, data)
         .then(alert("This collection has been updated"))
-        .then(closeMyCollectionModal())
+        .then(closeMyModal())
         .catch(err => console.log(err));
     });
+
+    document.getElementById("createStampForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const data = {};
+
+        data.name = this.name.value;
+        data.value = this.value.value;
+        data.yearMade = this.yearMade.value;
+        data.collectionId = this.collectionId.value;
+
+        axios.post(BASE_URL + "/stamp/create", data)
+        .then(res => alert("The " + res.data.name + " stamp has been created"))
+        .catch(err => console.log(err));
+    });
+
+    document.getElementById("readAllStamps").addEventListener("click", function() {
+        axios.get(BASE_URL + "/stamp/read")
+        .then(res => {
+            stampOutput.innerText = " ";
+            const stampElements = makeElements("div", "", stampOutput, "");
+                const stampTable = makeElements("table", "", stampElements, "table table-striped");
+                const stampTableBody = makeElements("tbody", "", stampTable, "");
+                const stampColumns = makeElements("tr", "", stampTableBody, "");
+                        makeElements("th", "ID", stampColumns, "");
+                        makeElements("th", "Stamp Name", stampColumns, "");
+                        makeElements("th", "Stamp Value", stampColumns, "");
+                        makeElements("th", "Year Made", stampColumns, "");
+                        makeElements("th", "Collection ID", stampColumns, "");
+            
+                        
+                        res.data.forEach((stamp, i)=> {
+                        makeElements("tr", "", stampTableBody, "");
+                        makeElements("td", stamp.id, stampTableBody, ""); 
+                        makeElements("td", stamp.name, stampTableBody, "");
+                        makeElements("td", stamp.value, stampTableBody, "");
+                        makeElements("td", stamp.yearMade, stampTableBody, "");
+                        makeElements("td", stamp.collectionId, stampTableBody, "");
+                
+            }).catch(err => console.log(err));
+        });
+    });
+
+    document.getElementById("deleteStampBtn").addEventListener("click", function () {
+        let deleteInput = document.getElementById("stampIdDelete");
+        let inputId = deleteInput.value;
+
+        axios.delete(BASE_URL + "/stamp/delete/" + inputId)
+        .then(res => alert("The stamp with ID of " + inputId + " has been deleted"))
+        .catch(err => console.log(err));
+    });
+
+
+    document.getElementById("updateStampBtn").addEventListener("click", function() {
+        const data = {};   
+        let updateStampId = document.getElementById("stampIdUpdate").value;
+        
+        let updatedName = document.getElementById("nameUpdateInput").value;
+        let updatedStampValue = document.getElementById("valueStampUpdateInput").value;
+        let updatedYearMade = document.getElementById("yearMadeUpdateInput").value;
+        let updatedColId = document.getElementById("colIdStampUpdateInput").value;
+
+        data.name = updatedName;
+        data.value = updatedStampValue;
+        data.yearMade = updatedYearMade;
+        data.collectionId = updatedColId;
+  
+        axios.put(BASE_URL + "/stamp/update/" + updateStampId, data)
+        .then(alert("This stamp has been updated"))
+        .then(closeMyModal())
+        .catch(err => console.log(err));
+    });
+
 
 
 
@@ -103,7 +177,23 @@ function openMyCollectionModal() {
             
 }
 
-function closeMyCollectionModal() {
+function openMyStampModal() {
+    document.getElementById("myStampModal").style.display = "block";
+    let idInputUpdate = document.getElementById("stampIdUpdate");
+    let stampToUpdate = idInputUpdate.value;
+
+    axios.get(BASE_URL + "/stamp/read/" + stampToUpdate)
+    .then(res => {
+            document.getElementById("nameUpdateInput").placeholder = res.data.name;
+            document.getElementById("valueStampUpdateInput").placeholder = res.data.value;
+            document.getElementById("yearMadeUpdateInput").placeholder = res.data.yearMade;
+            document.getElementById("colIdStampUpdateInput").placeholder = res.data.collectionId;
+        })
+            
+}
+
+function closeMyModal() {
     document.getElementById("myModal").style.display = "none";
+    document.getElementById("myStampModal").style.display = "none";
 }
 
