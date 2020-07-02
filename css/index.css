@@ -1,7 +1,9 @@
 body {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
+
+
 .top-heading {
     background-color: #323232;
     color: white;
@@ -10,7 +12,6 @@ body {
     margin: 0 20px 20px 20px;
     text-align: center;
 }
-
 
 
 #collection-head {
@@ -29,7 +30,8 @@ body {
 .container-grid {
     display: grid;
     grid-template-columns: auto auto;
-    margin: 2% 10% 6% 10%;
+    margin: 2% 7% 6% 7%;
+    justify-content: center;
 }
 
 #stamp-heading {
@@ -38,8 +40,7 @@ body {
 }
 
 .btn {
-    margin: 8px 0 5px 0;
-    
+    margin: 5px;
 }
 
 .stamp-img {
@@ -47,7 +48,7 @@ body {
     text-align: center;
 }
 
-.btn {
+.btns {
     position: absolute;
     bottom: 5px;
 }
@@ -78,7 +79,10 @@ body {
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4);
   }
-  
+  .modal-title {
+      padding: 5px;
+      margin-bottom: 10px;
+  }
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto; 
@@ -101,11 +105,3 @@ body {
     cursor: pointer;
   }
 
-.btn-dark {
-    border-radius: 12%;
-    box-shadow: 0;
-}
-
-.btn-info {
-    border-radius: 12%;
-}
