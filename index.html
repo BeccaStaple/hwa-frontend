@@ -69,7 +69,7 @@
                         <br/>
 
                         <br/>
-                        <button id="updateCollectionBtn" class="btn btn-secondary bt-lg btn-block">UPDATE</button>
+                        <button id="openUpdateModal" onclick="openMyCollectionModal();" class="btn btn-secondary bt-lg btn-block" data-toggle="modal" data-target="#staticBackdrop">UPDATE</button>
                     </div>
                 </div>
 
@@ -78,7 +78,33 @@
         </div>
 
         <div id="collectionOutputDiv"></div>
-    </div>
+
+        <!--Build modal-->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                <span id="closeCollectionBtn" onclick="closeMyCollectionModal();">&times;</span>
+                <div id="inputUpdateCollection">
+                        <h3>Update Collection</h2>
+                                    <label for="themeUpdateInput">Theme</label>
+                                    <br/>
+                                        <input name="theme" type="text" id="themeUpdateInput"/>
+                                    <br/>
+                                    <label for="valueUpdateInput" type="number" step="0.01">Value</label>
+                                    <br/>
+                                        <input name="value" type="text" id="valueUpdateInput"/>
+                <div id="buttons">
+                    <button type="button" class="updateButtons" id="updateCollectionBtn">Update</button>
+                    <button type="button" class="updateButtons" onclick="closeMyCollectionModal();" data-dismiss="modal">Cancel</button>
+                </div>
+                </div>
+                
+                </div>
+            
+            </div>
+                   
+                        
 
         <div class="stamp-section">
 
@@ -161,6 +187,9 @@
         </div>
         <a href="https://icons8.com/icon/81242/post-stamp">Post Stamp icon by Icons8</a>
     </div>
+
+    
+
     </body>
     <script src="./js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>

@@ -53,6 +53,7 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
 
 
     document.getElementById("updateStampBtn").addEventListener("click", function() {
+        
         const data = {};
         let updateInput = document.getElementById("collectionIdUpdate");
         let updateId = updateInput.value;
@@ -75,5 +76,13 @@ function makeElements(elementType, text, appendTo, className) {
     appendTo.appendChild(element);
     element.className = className;
     return element;
+}
+
+function openMyCollectionModal() {
+    document.getElementById("myModal").style.display = "block";
+}
+
+function closeMyCollectionModal() {
+    document.getElementById("myModal").style.display = "none";
 }
 
