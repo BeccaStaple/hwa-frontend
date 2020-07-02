@@ -29,10 +29,10 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
                 makeElements("th", "ID", colColumns, "");
                         makeElements("th", "Theme", colColumns, "");
                         makeElements("th", "Value", colColumns, "");
-            res.data.forEach((collection, i)=> {
-                
-                
-                    makeElements("tr", "", colTableBody, "");
+            
+                        
+                        res.data.forEach((collection, i)=> {
+                        makeElements("tr", "", colTableBody, "");
                         makeElements("td", collection.id, colTableBody, ""); 
                         makeElements("td", collection.theme, colTableBody, "");
                         makeElements("td", collection.value, colTableBody, "");
@@ -52,16 +52,21 @@ const collectionOutput = document.getElementById("collectionOutputDiv");
     });
 
 
-    document.getElementById("updateStampBtn").addEventListener("click", function() {
-        const data = {};
-        let updateInput = document.getElementById("collectionIdUpdate");
-        let updateId = updateInput.value;
+    document.getElementById("updateCollectionBtn").addEventListener("click", function() {
+        const data = {};   
+        let updateId = document.getElementById("collectionIdUpdate").value;
+        
+        let updatedTheme = document.getElementById("themeUpdateInput").value;
 
-        data.theme = this.theme.value;
-        data.value = this.value.value;
+        let updatedValue = document.getElementById("valueUpdateInput").value;
 
-        axios.put(BASE_URL + "/collection/update/", data)
-        .then(res => alert(res + "has been updated"))
+        data.theme = updatedTheme;
+        data.value = updatedValue;
+
+
+        axios.put(BASE_URL + "/collection/update/" + updateId, data)
+        .then(alert("This collection has been updated"))
+        .then(closeMyCollectionModal())
         .catch(err => console.log(err));
     });
 
@@ -75,5 +80,27 @@ function makeElements(elementType, text, appendTo, className) {
     appendTo.appendChild(element);
     element.className = className;
     return element;
+}
+
+function openMyCollectionModal() {
+    document.getElementById("myModal").style.display = "block";
+    const data = {};
+    const updateOutput = document.getElementById("updateCollectionOutput");
+    let readUpdateOutput = makeElements("div", "", updateOutput, "");
+    let idInputUpdate = document.getElementById("collectionIdUpdate");
+    let colToUpdate = idInputUpdate.value;
+
+    
+    
+    axios.get(BASE_URL + "/collection/read/" + colToUpdate)
+    .then(res => {
+            document.getElementById("themeUpdateInput").placeholder = res.data.theme;
+            document.getElementById("valueUpdateInput").placeholder = res.data.value;
+        })
+            
+}
+
+function closeMyCollectionModal() {
+    document.getElementById("myModal").style.display = "none";
 }
 
