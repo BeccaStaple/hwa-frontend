@@ -48,7 +48,7 @@ const stampOutput = document.getElementById("readStampOutput");
         let inputId = deleteInput.value;
 
         axios.delete(BASE_URL + "/collection/delete/" + inputId)
-        .then(res => alert("The collection with ID of " + res.data.inputId + " collection has been deleted"))
+        .then(res => alert("The collection with ID of " + inputId + " has been deleted"))
         .catch(err => console.log(err));
     });
 
