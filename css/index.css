@@ -2,6 +2,8 @@ body {
     margin-left: 20%;
     margin-right: 20%;
 }
+
+
 .top-heading {
     background-color: #323232;
     color: white;
@@ -10,7 +12,6 @@ body {
     margin: 0 20px 20px 20px;
     text-align: center;
 }
-
 
 
 #collection-head {
@@ -29,7 +30,7 @@ body {
 .container-grid {
     display: grid;
     grid-template-columns: auto auto;
-    margin: 2% 10% 6% 10%;
+    margin: 2% 7% 6% 7%;
 }
 
 #stamp-heading {
@@ -38,16 +39,15 @@ body {
 }
 
 .btn {
-    margin: 8px 0 5px 0;
-    
+    margin: 5px;
 }
 
 .stamp-img {
-    margin: 50px 0 10px 0;
+    margin: 30px 0 30px 0;
     text-align: center;
 }
 
-.btn {
+.btns {
     position: absolute;
     bottom: 5px;
 }
@@ -72,18 +72,22 @@ body {
     z-index: 1; 
     left: 0;
     top: 0;
-    width: auto; 
+    width: 100%; 
     height: 100%; 
     overflow: auto;
-    margin: 10% 20%;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
   }
-  
+  .modal-title {
+      padding: 5px;
+      margin-bottom: 10px;
+  }
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: auto; 
+    width: 40%; 
   }
   
   #closeCollectionBtn {
@@ -100,6 +104,3 @@ body {
     cursor: pointer;
   }
 
-  .updateButtons {
-     margin: 5%;
-  }
