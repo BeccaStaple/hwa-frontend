@@ -4,6 +4,9 @@ const BASE_URL = "http://localhost:8082";
 const collectionOutput = document.getElementById("collectionOutputDiv");
 const stampOutput = document.getElementById("readStampOutput");
 
+
+
+
 (function () {
     
     document.getElementById("createCollectionForm").addEventListener("submit", function(event) {
@@ -15,7 +18,7 @@ const stampOutput = document.getElementById("readStampOutput");
         data.value = this.value.value;
 
         axios.post(BASE_URL + "/collection/create", data)
-        .then(res => alert("The " + res.data.theme + " collection has been created"))
+        .then(entityCreated())
         .catch(err => console.log(err));
     });
 
@@ -48,7 +51,7 @@ const stampOutput = document.getElementById("readStampOutput");
         let inputId = deleteInput.value;
 
         axios.delete(BASE_URL + "/collection/delete/" + inputId)
-        .then(res => alert("The collection with ID of " + inputId + " has been deleted"))
+        .then(entityCreated())
         .catch(err => console.log(err));
     });
 
@@ -74,7 +77,7 @@ const stampOutput = document.getElementById("readStampOutput");
         }
   
         axios.put(BASE_URL + "/collection/update/" + updateId, data)
-        .then(alert("This collection has been updated"))
+        .then(entityCreated())
         .then(closeMyModal())
         .catch(err => console.log(err));
     });
@@ -90,7 +93,7 @@ const stampOutput = document.getElementById("readStampOutput");
         data.collectionId = this.collectionId.value;
 
         axios.post(BASE_URL + "/stamp/create", data)
-        .then(res => alert("The " + res.data.name + " stamp has been created"))
+        .then(entityCreated())
         .catch(err => console.log(err));
     });
 
@@ -126,7 +129,7 @@ const stampOutput = document.getElementById("readStampOutput");
         let inputId = deleteInput.value;
 
         axios.delete(BASE_URL + "/stamp/delete/" + inputId)
-        .then(res => alert("The stamp with ID of " + inputId + " has been deleted"))
+        .then(entityCreated())
         .catch(err => console.log(err));
     });
 
@@ -146,7 +149,7 @@ const stampOutput = document.getElementById("readStampOutput");
         data.collectionId = updatedColId;
   
         axios.put(BASE_URL + "/stamp/update/" + updateStampId, data)
-        .then(alert("This stamp has been updated"))
+        .then(entityCreated())
         .then(closeMyModal())
         .catch(err => console.log(err));
     });
@@ -195,5 +198,12 @@ function openMyStampModal() {
 function closeMyModal() {
     document.getElementById("myModal").style.display = "none";
     document.getElementById("myStampModal").style.display = "none";
+    document.getElementById("toast-output").style.display = "none";
 }
+
+function entityCreated() {
+    document.getElementById("toast-output").style.display = "block";
+    
+}
+
 
