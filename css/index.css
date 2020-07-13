@@ -3,7 +3,6 @@ body {
     margin-right: 20%;
 }
 
-
 .top-heading {
     background-color: #323232;
     color: white;
@@ -102,5 +101,27 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  #toast-output {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  #toast-content {
+    background-color: #21bf73;
+    margin: 15% auto; 
+    color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; 
   }
 
