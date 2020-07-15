@@ -13,7 +13,7 @@ Follow this link to view the documentation and license:
 <p>The webpage can be viewed at: https://beccastaple.github.io/hwa-frontend/</p>
 
 <hr>
-<p>The backend of this project has the full documentation on how to get everythign running</p>
+<p>The backend of this project has the full documentation on how to get everything functioning properly</p>
 
 <h2>Built With</h2>
 <p>Visual Studio Code</p>
