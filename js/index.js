@@ -198,12 +198,15 @@ function openMyStampModal() {
 function closeMyModal() {
     document.getElementById("myModal").style.display = "none";
     document.getElementById("myStampModal").style.display = "none";
-    document.getElementById("toast-output").style.display = "none";
 }
 
 function entityCreated() {
     document.getElementById("toast-output").style.display = "block";
     
+}
+
+function closeToast() {
+    document.getElementById("toast-output").style.display = "none";
 }
 
 
