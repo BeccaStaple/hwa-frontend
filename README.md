@@ -1,5 +1,3 @@
-Follow this link to view the documentation and license: 
-
 <h1>Hobby Project</h1>
 <hr>
 <p>This is a project that was set to me by QA Consulting to access my understanding fo rht technologies they have been teaching me</p>
