@@ -85,12 +85,14 @@ const stampOutput = document.getElementById("readStampOutput");
     document.getElementById("createStampForm").addEventListener("submit", function(event) {
         event.preventDefault();
 
-        const data = {};
+        const data = {
+            collection : {}
+        };
 
         data.name = this.name.value;
         data.value = this.value.value;
         data.yearMade = this.yearMade.value;
-        data.collectionId = this.collectionId.value;
+        data.collection.id = this.collectionId.value;
 
         axios.post(BASE_URL + "/stamp/create", data)
         .then(entityCreated())
@@ -112,7 +114,7 @@ const stampOutput = document.getElementById("readStampOutput");
                         makeElements("th", "Collection ID", stampColumns, "");
             
                         
-                        res.data.forEach((stamp, i)=> {
+                        res.data.forEach((stamp, i) => {
                         makeElements("tr", "", stampTableBody, "");
                         makeElements("td", stamp.id, stampTableBody, ""); 
                         makeElements("td", stamp.name, stampTableBody, "");
