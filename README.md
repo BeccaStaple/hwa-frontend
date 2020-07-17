@@ -1,6 +1,6 @@
 <h1>Hobby Project</h1>
 <hr>
-<p>This is a project that was set to me by QA Consulting to access my understanding fo rht technologies they have been teaching me</p>
+<p>This is a project that was set to me by QA Consulting to assess my understanding of the technologies they have been teaching me</p>
 <p>With this application you can create your own stamp and a collection of stamps, the stamps can be read back to you and you can update and delete your stamp collection</p>
 
 <p>Bringing stamp collecting into the 21st Century!</p>
@@ -11,7 +11,7 @@
 <p>The webpage can be viewed at: https://beccastaple.github.io/hwa-frontend/</p>
 
 <hr>
-<p>The backend of this project has the full documentation on how to get everything functioning properly</p>
+<p>The HWA-backend repo has the full documentation on how to get everything functioning properly</p>
 
 <h2>Built With</h2>
 <p>Visual Studio Code</p>
